@@ -20,13 +20,14 @@
       <div class="wraper-box">
         <label for="creditAmount">Сума кредиту (грн):</label>
         <input
+          class="input-number"
           type="number"
           id="creditAmount"
           name="creditAmount"
           min="1000"
           max="50000"
           step="100"
-          value="6000"
+          value="0"
         />
         <input
           type="range"
@@ -35,19 +36,20 @@
           min="1000"
           max="50000"
           step="100"
-          value="6000"
+          value="0"
         /><br /><br />
       </div>
       <div class="wraper-box">
         <label for="repaymentPeriod">Період погашення (днів):</label>
         <input
+          class="input-number"
           type="number"
           id="repaymentPeriod"
           name="repaymentPeriod"
           min="7"
           max="60"
           step="1"
-          value="10"
+          value="0"
         />
         <input
           type="range"
@@ -56,14 +58,17 @@
           min="7"
           max="60"
           step="1"
-          value="10"
+          value="0"
         /><br /><br />
       </div>
-      <p class="result">Щоденне погашення:<span id="result-day"></span></p>
+      <p class="result">
+        Щоденне погашення: <span id="result-day">0</span> грн
+      </p>
 
-      <p class="result">Повне погашення:<span id="result-over"></span></p>
-
-      <button type="submit">Отримати кредит</button>
+      <p class="result">Повне погашення: <span id="result-over">0</span> грн</p>
+      <div class="wrap-btn">
+        <button type="submit" id="pass-credit" disabled>Отримати кредит</button>
+      </div>
     </form>
     <script src="calculator.js" type="module"></script>
   </body>

@@ -70,7 +70,7 @@ function createMoney() {
   document.body.appendChild(money);
   setTimeout(() => {
     money.remove();
-  }, 5000);
+  }, 3000);
 }
 
 formSubmin.addEventListener("submit", function (ev) {

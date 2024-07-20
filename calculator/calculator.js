@@ -10,8 +10,6 @@ const interestRate = 2.2;
 
 const sumOnDay = (sum, period) => {
   const result = sum + sum * (interestRate / 100) * period;
-  console.log("sum", sum);
-  console.log("period", period);
   return result;
 };
 
@@ -64,10 +62,26 @@ repaymentPeriodSlider.addEventListener("input", function () {
   repaymentPeriodInput.value = repaymentPeriodSlider.value;
   updateResults();
 });
+function createMoney() {
+  const money = document.createElement("div");
+  money.classList.add("money");
+  money.style.left = Math.random() * 80 + "vw";
+  money.style.animationDuration = "3s";
+  document.body.appendChild(money);
+  setTimeout(() => {
+    money.remove();
+  }, 5000);
+}
 
 formSubmin.addEventListener("submit", function (ev) {
-  ev.preventDefault;
-  alert("Кредит успішно отримано");
+  ev.preventDefault();
   btnPassCredit.disabled = true;
-  formSubmin.recect();
+  const interval = setInterval(createMoney, 300);
+
+  setTimeout(() => {
+    btnPassCredit.disabled = true;
+    clearInterval(interval);
+    alert("Кредит успішно отримано");
+    formSubmin.reset();
+  }, 3000);
 });
